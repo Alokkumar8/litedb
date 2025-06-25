@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Alokkumar8/litedb/issues"
   },
-  "homepage": "https://github.com/Alokkumar8/litedb#readme"
+  "homepage": "https://github.com/Alokkumar8/litedb#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
