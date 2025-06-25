@@ -23,13 +23,13 @@ app.get('/db', (req, res) => {
 app.post("/db", (req, res) => {
   fetch(`https://aiagents.onrender.com/litedb`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(req.body),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: req.body,
   })
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });
 
 app.listen(3000, () => console.log("Running on port 3000"));
