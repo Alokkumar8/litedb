@@ -18,7 +18,7 @@ A lightweight, no signup, no-setup JSON database service that allows you to stor
 Send a POST request to store your JSON data:
 
 ```http
-POST https://litedb.code/db
+POST https://litedb.vercel.app/db
 Content-Type: application/json
 
 {
@@ -33,7 +33,7 @@ Content-Type: application/json
 Get your data back using the same ID:
 
 ```http
-GET https://litedb.code/db?id=your-unique-id-here
+GET https://litedb.vercel.app/db?id=your-unique-id-here
 ```
 
 Response:
@@ -51,10 +51,10 @@ Response:
 
 ```javascript
 const dbId = 'my-app-data-123'
-const url = `https://litedb.code/db?id=\${dbId}`
+const url = `https://litedb.vercel.app/db?id=\${dbId}`
 
 // Store data
-await fetch('https://litedb.code/db', {
+await fetch('https://litedb.vercel.app/db', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ 
@@ -94,7 +94,7 @@ console.log(data) // { id: 'my-app-data-123', name: 'Alok', city: 'Chennai' }
             const dbId = 'user-form-' + Date.now() // Generate unique ID
             
             try {
-                await fetch('https://litedb.code/db', {
+                await fetch('https://litedb.vercel.app/db', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id: dbId, name, city })
@@ -124,7 +124,7 @@ console.log(data) // { id: 'my-app-data-123', name: 'Alok', city: 'Chennai' }
     <script>
         async function loadData() {
             try {
-                const response = await fetch('https://litedb.code/db?id=your-data-id')
+                const response = await fetch('https://litedb.vercel.app/db?id=your-data-id')
                 const data = await response.json()
                 
                 document.getElementById('userData').innerHTML = `
@@ -148,13 +148,13 @@ console.log(data) // { id: 'my-app-data-123', name: 'Alok', city: 'Chennai' }
 
 ### Store Data
 - **Method:** POST
-- **URL:** `https://litedb.code/db`
+- **URL:** `https://litedb.vercel.app/db`
 - **Headers:** `Content-Type: application/json`
 - **Body:** JSON object with required `id` field
 
 ### Retrieve Data
 - **Method:** GET
-- **URL:** `https://litedb.code/db?id=YOUR_ID`
+- **URL:** `https://litedb.vercel.app/db?id=YOUR_ID`
 - **Response:** JSON object that was stored
 
 ## 💡 Best Practices
@@ -176,7 +176,7 @@ const id = '123'  // Too simple
 
 ```javascript
 try {
-    const response = await fetch('https://litedb.code/db?id=my-data')
+    const response = await fetch('https://litedb.vercel.app/db?id=my-data')
     if (!response.ok) {
         throw new Error(`HTTP error! status: \${response.status}`)
     }
@@ -232,12 +232,12 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🆘 Support
 
 - **GitHub Issues:** [Report bugs or request features](https://github.com/Alokkumar8/litedb/issues)
-- **Documentation:** [Full API documentation](https://litedb.code/docs)
-- **Examples:** [More examples and tutorials](https://litedb.code/examples)
+- **Documentation:** [Full API documentation](https://litedb.vercel.app/docs)
+- **Examples:** [More examples and tutorials](https://litedb.vercel.app/examples)
 
 ---
 
 **Made with ❤️ for developers who need simple data storage**
 
-[🌐 Visit LiteDB](https://litedb.code) | [📚 Documentation](https://litedb.code) | [💻 GitHub](https://github.com/Alokkumar8/litedb)
+[🌐 Visit LiteDB](https://litedb.vercel.app) | [📚 Documentation](https://litedb.vercel.app) | [💻 GitHub](https://github.com/Alokkumar8/litedb)
 ```
