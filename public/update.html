@@ -45,11 +45,11 @@
             .then(response => response.json())
             .then(result => {
                 console.log("Success:", result);
-                alert("Asteroid data updated successfully!");
+                alert("Data saved successfully!");
             })
             .catch(error => {
                 console.error("Error:", error);
-                alert("There was an error updating asteroid data.");
+                alert("There was an error saving data.");
             });
         });
     </script>
