@@ -1,6 +1,6 @@
 # LiteDB - Simple JSON Database for JavaScript
 
-A lightweight, no-setup JSON database service that allows you to store and retrieve data using simple HTTP requests. Perfect for prototypes, demos, and small projects.
+A lightweight, no signup, no-setup JSON database service that allows you to store and retrieve data using simple HTTP requests. Feel free to use it in production, form sites and small projects.
 
 ## ✨ Features
 
@@ -144,45 +144,6 @@ console.log(data) // { id: 'my-app-data-123', name: 'Alok', city: 'Chennai' }
 </html>
 ```
 
-### Python Example
-
-```python
-import requests
-import json
-
-# Store data
-data = {
-    "id": "python-example-123",
-    "name": "Alok",
-    "city": "Chennai"
-}
-
-response = requests.post(
-    'https://litedb.code/db',
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps(data)
-)
-
-# Retrieve data
-response = requests.get('https://litedb.code/db?id=python-example-123')
-retrieved_data = response.json()
-print(retrieved_data)
-```
-
-### cURL Examples
-
-Store data:
-```bash
-curl -X POST https://litedb.code/db \\
-  -H "Content-Type: application/json" \\
-  -d '{"id": "curl-example-456", "name": "Alok", "city": "Chennai"}'
-```
-
-Retrieve data:
-```bash
-curl "https://litedb.code/db?id=curl-example-456"
-```
-
 ## 🔧 API Reference
 
 ### Store Data
@@ -249,15 +210,15 @@ if (validateUserData(userData)) {
 
 ## 🚨 Important Notes
 
-- **Data Persistence:** Data is stored temporarily and may be cleared periodically
+- **Data Persistence:** Data is stored permanently and can be used in production
 - **No Authentication:** Anyone with your ID can access your data
 - **Rate Limiting:** Excessive requests may be throttled
 - **Data Size:** Keep individual records under 1MB for best performance
-- **Production Use:** This service is intended for development, prototyping, and demos
+- **Production Use:** This service is intended for development, form sites and demos
 
 ## 🤝 Contributing
 
-We welcome contributions! Please visit our [GitHub repository](https://github.com/litedb/litedb) to:
+We welcome contributions! Please visit our [GitHub repository](https://github.com/Alokkumar8/litedb) to:
 
 - Report bugs
 - Request features
@@ -270,7 +231,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🆘 Support
 
-- **GitHub Issues:** [Report bugs or request features](https://github.com/litedb/litedb/issues)
+- **GitHub Issues:** [Report bugs or request features](https://github.com/Alokkumar8/litedb/issues)
 - **Documentation:** [Full API documentation](https://litedb.code/docs)
 - **Examples:** [More examples and tutorials](https://litedb.code/examples)
 
@@ -278,5 +239,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Made with ❤️ for developers who need simple data storage**
 
-[🌐 Visit LiteDB](https://litedb.code) | [📚 Documentation](https://litedb.code/docs) | [💻 GitHub](https://github.com/litedb/litedb)
+[🌐 Visit LiteDB](https://litedb.code) | [📚 Documentation](https://litedb.code) | [💻 GitHub](https://github.com/Alokkumar8/litedb)
 ```
