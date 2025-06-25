@@ -20,12 +20,21 @@ app.get('/db', (req, res) => {
     });
 })
 
-app.post("/db", (req, res) => {
-  fetch(`https://aiagents.onrender.com/litedb`, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: req.body,
-  })
+app.post("/db", async (req, res) => {
+  const params = new URLSearchParams(req.body);
+
+  try {
+    const response = await fetch("https://aiagents.onrender.com/litedb", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+
+    const result = await response.json();
+    res.send(result);
+  } catch (error) {
+    res.status(500).send("Error forwarding request: " + error.message);
+  }
 });
 
 app.listen(port, () => {
